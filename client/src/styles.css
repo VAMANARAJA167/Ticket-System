@@ -1,0 +1,82 @@
+/** @format */
+
+i {
+  margin-right: 5px;
+}
+
+td {
+  max-width: 250px;
+}
+
+.navbar {
+  padding: 15px 10px;
+  background: #fff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  outline: none;
+}
+.navbar-nav{
+  margin-left: 75%;
+}
+
+/* ---------------------------------------------------
+  SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.sidebar {
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .nav-link {
+  color: black;
+  transition: 0.3s all;
+}
+
+.sidebar .nav-link.active {
+  color: #000;
+}
+
+/* .sidebar .nav-item{
+  margin-bottom: 20px;
+} */
+.sidebar .light:hover{
+  text-decoration: none;
+  font-weight: 600;
+  
+  
+}
+.sidebar .dark:hover{
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+/* ---------------------------------------------------
+  CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.low-priority {
+  color: green;
+}
+
+.med-priority {
+  color: darkgoldenrod;
+}
+
+.high-priority {
+  color: red;
+}
