@@ -1,4 +1,7 @@
 import React,{ createContext,useState } from "react";
+import axios from 'axios';
+
+axios.defaults.baseURL = process.env.REACT_APP_SERVER_URL;
 
 
 export const ThemeContext = createContext(null)
