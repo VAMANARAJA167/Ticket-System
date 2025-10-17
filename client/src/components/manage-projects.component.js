@@ -28,7 +28,7 @@ const ManageProjects = () => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/projects/');
+                const res = await axios.get('/projects/');
                 setProjects(res.data);
             } catch (error) {
                 console.log(error);
@@ -41,7 +41,7 @@ const ManageProjects = () => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/projects/');
+                const res = await axios.get('/projects/');
                 setProjects(res.data);
             } catch (error) {
                 console.log(error);
@@ -53,7 +53,7 @@ const ManageProjects = () => {
 
     const deleteProject = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/projects/${id}`);
+            await axios.delete(`/projects/${id}`);
             setProjects(projects.filter(project => project._id !== id));
         } catch (error) {
             console.log(error);

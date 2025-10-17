@@ -19,7 +19,7 @@ const Ticket = (props) => {
     });
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/tickets/${props.ticket._id}`)
+        axios.get(`/tickets/${props.ticket._id}`)
             .then(res => {
                 setTicketState({
                     title: res.data.title,

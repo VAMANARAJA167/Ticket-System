@@ -22,7 +22,7 @@ const EditTicket = () => {
 
     useEffect(() => {
         // default state of ticket
-        axios.get(`http://localhost:5000/tickets/${id}`)
+        axios.get(`/tickets/${id}`)
             .then(res => {
                 setTitle(res.data.title);
                 setDescription(res.data.description);
@@ -35,7 +35,7 @@ const EditTicket = () => {
             .catch((error) => { console.log(error); });
 
         // get list of users to select from
-        axios.get('http://localhost:5000/users/')
+        axios.get('/users/')
             .then(res => {
                 if (res.data.length > 0) {
                     setUsers(res.data.map(user => user.name));
@@ -44,7 +44,7 @@ const EditTicket = () => {
             .catch((error) => { console.log(error); });
 
         // get list of projects to select from
-        axios.get('http://localhost:5000/projects/')
+        axios.get('/projects/')
             .then(res => {
                 if (res.data.length > 0) {
                     setProjects(res.data.map(project => project.name));
@@ -66,7 +66,7 @@ const EditTicket = () => {
             type
         };
 
-        axios.post(`http://localhost:5000/tickets/update/${id}`, ticket)
+        axios.post(`/tickets/update/${id}`, ticket)
             .then(res => console.log(res.data));
 
         alert('Successfully updated.');

@@ -10,7 +10,7 @@ const TicketList = () => {
   const {theme} = useContext(ThemeContext)
   useEffect(() => {
     axios
-      .get('http://localhost:5000/tickets/')
+      .get('/tickets/')
       .then((res) => {
         setTickets(res.data);
       })
@@ -26,7 +26,7 @@ const TicketList = () => {
     if (isAuthorized()) {
       const token = localStorage.getItem('token');
       axios
-        .delete(`http://localhost:5000/tickets/${id}`, {
+        .delete(`/tickets/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {

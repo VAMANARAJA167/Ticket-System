@@ -43,7 +43,7 @@ const PriorityChart = () => {
     let highCount = 0;
 
     axios
-      .get('http://localhost:5000/tickets/')
+      .get('/tickets/')
       .then((res) => {
         setTickets(res.data);
 

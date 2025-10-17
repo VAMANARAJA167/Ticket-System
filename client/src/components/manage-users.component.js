@@ -35,7 +35,7 @@ const ManageUsers = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/users/');
+                const res = await axios.get('/users/');
                 setUsers(res.data);
             } catch (error) {
                 console.log(error);
@@ -48,7 +48,7 @@ const ManageUsers = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/users/');
+                const res = await axios.get('/users/');
                 setUsers(res.data);
             } catch (error) {
                 console.log(error);
@@ -60,7 +60,7 @@ const ManageUsers = () => {
 
     const deleteUser = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/users/${id}`);
+            await axios.delete(`/users/${id}`);
             setUsers(users.filter(user => user._id !== id));
         } catch (error) {
             console.log(error);

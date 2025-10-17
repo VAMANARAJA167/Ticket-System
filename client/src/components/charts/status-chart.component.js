@@ -26,7 +26,7 @@ const StatusChart = () => {
         let progressCount = 0;
         let resolvedCount = 0;
 
-        axios.get('http://localhost:5000/tickets/')
+        axios.get('/tickets/')
             .then(res => {
                 setTickets(res.data);
 

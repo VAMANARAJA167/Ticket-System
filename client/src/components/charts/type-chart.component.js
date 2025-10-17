@@ -25,7 +25,7 @@ const TypeChart = () => {
         let securityCount = 0;
         let otherCount = 0;
 
-        axios.get('http://localhost:5000/tickets/')
+        axios.get('/tickets/')
             .then(res => {
                 setTickets(res.data);
 

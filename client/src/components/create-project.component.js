@@ -7,7 +7,7 @@ const CreateProject = () => {
 
     useEffect(() => {
         // get list of projects to set default project
-        axios.get('http://localhost:5000/projects/')
+        axios.get('/projects/')
             .then(res => {
                 if (res.data.length > 0) {
                     setProjects(res.data.map(project => project.name));
@@ -29,7 +29,7 @@ const CreateProject = () => {
 
         console.log(project);
 
-        axios.post('http://localhost:5000/projects/create', project)
+        axios.post('/projects/create', project)
             .then(res => console.log(res.data));
 
         // clear form

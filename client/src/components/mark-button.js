@@ -18,15 +18,15 @@ const MarkButton = ({ _id }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const ticketRes = await axios.get(`http://localhost:5000/tickets/${_id}`);
+                const ticketRes = await axios.get(`/tickets/${_id}`);
                 setTicket(ticketRes.data);
 
-                const usersRes = await axios.get('http://localhost:5000/users/');
+                const usersRes = await axios.get('/users/');
                 if (usersRes.data.length > 0) {
                     setUsers(usersRes.data.map(user => user.name));
                 }
 
-                const projectsRes = await axios.get('http://localhost:5000/projects/');
+                const projectsRes = await axios.get('/projects/');
                 if (projectsRes.data.length > 0) {
                     setProjects(projectsRes.data.map(project => project.name));
                 }
@@ -50,7 +50,7 @@ const MarkButton = ({ _id }) => {
         };
 
         try {
-            await axios.post(`http://localhost:5000/tickets/update/${_id}`, updatedTicket);
+            await axios.post(`/tickets/update/${_id}`, updatedTicket);
             console.log('Successfully updated.');
         } catch (error) {
             console.log(error);

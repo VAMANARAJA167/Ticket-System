@@ -18,7 +18,7 @@ const CreateTicket = () => {
 
     useEffect(() => {
         // get list of users to set default assignee
-        axios.get('http://localhost:5000/users/')
+        axios.get('/users/')
             .then(res => {
                 if (res.data.length > 0) {
                     setUsers(res.data.map(user => user.name));
@@ -28,7 +28,7 @@ const CreateTicket = () => {
             .catch(error => console.log(error));
 
         // get list of projects to set default project
-        axios.get('http://localhost:5000/projects/')
+        axios.get('/projects/')
             .then(res => {
                 if (res.data.length > 0) {
                     setProjects(res.data.map(project => project.name));
@@ -51,7 +51,7 @@ const CreateTicket = () => {
             type
         };
 
-        axios.post('http://localhost:5000/tickets/create', ticket)
+        axios.post('/tickets/create', ticket)
             .then(res => console.log(res.data));
 
         alert('Successfully created.');
