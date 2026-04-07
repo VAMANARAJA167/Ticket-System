@@ -20,6 +20,11 @@ app.use(bodyParser.json());
 // CORS Middleware
 app.use(cors());
 
+app.use('/api/auth', authRoutes);
+app.use('/tickets', ticketsRouter);
+app.use('/users', usersRouter);
+app.use('/projects', projectsRouter);
+
 // DB Config
 const db = process.env.MONGO_URI;
 
@@ -28,16 +33,9 @@ mongoose
   .connect(db, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
   })
   .then(() => {
     console.log('MongoDB Connected');
-    // Use Routes after successful connection
-    app.use('/api/auth', authRoutes);
-    app.use('/tickets', ticketsRouter);
-    app.use('/users', usersRouter);
-    app.use('/projects', projectsRouter);
-
     const port = process.env.PORT || 5000;
     app.listen(port, () => console.log(`Server started on port ${port}`));
   })
